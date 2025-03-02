@@ -1,0 +1,155 @@
+.cartContainer {
+  background: #f5f1f1;
+  display: flex;
+  gap: 2vh;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.cartTitle {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.emptyCart {
+  color: #888;
+  font-size: 16px;
+  text-align: center;
+}
+
+.cartList {
+  list-style: none;
+  padding-top: 5vh;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.itemImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.itemDetails {
+  flex-grow: 1;
+  margin-left: 10px;
+  text-align: left;
+  min-width: 150px;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.itemPrice {
+  font-size: 14px;
+  color: #e41b7b;
+}
+
+.removeButton {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background: darkred;
+}
+
+.checkoutButton {
+  margin-top: 10px;
+  background: #e41b7b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.checkoutButton:hover {
+  background: #e41b7b;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .cartContainer {
+  }
+
+  .cartList {
+    list-style: none;
+    padding-top: 5vh;
+    display: flex;
+    gap: 1.5vh;
+    flex-direction: column;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .itemImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .itemDetails {
+    margin-left: 0;
+  }
+
+  .removeButton {
+    width: 100%;
+    padding: 8px;
+  }
+  .tab {
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+    height: 12vh;
+    background: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2vh;
+  }
+  .tab p {
+    background: #e41b7c24;
+    width: 100%;
+    padding: 0.8vh;
+    font-size: 1.5vh;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1); /* Top shadow */
+    border-top: 0.5px solid rgba(128, 128, 128, 0.8);
+  }
+  .checkoutButton {
+    width: 90%;
+    padding: 12px;
+    font-size: 1.5vh;
+    font-weight: 700;
+  }
+}

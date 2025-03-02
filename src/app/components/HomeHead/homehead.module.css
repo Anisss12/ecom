@@ -1,0 +1,33 @@
+.bannerSection {
+  height: 30vw;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5vh;
+  overflow: hidden;
+  border-radius: 1vw;
+  padding-top: 6vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.bennerImageBox {
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+}
+
+.bannerImage {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .bannerSection {
+    padding-top: 0;
+
+    height: 20vh;
+    margin-top: 18vh;
+  }
+}

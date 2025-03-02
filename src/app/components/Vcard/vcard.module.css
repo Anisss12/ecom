@@ -1,0 +1,65 @@
+.vcard {
+  height: 20vw;
+  width: 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.2vw;
+  gap: 0.5vw;
+  overflow: hidden;
+  border: 0.5px solid rgb(195, 193, 193);
+}
+
+.imgBox {
+  height: 80%;
+  width: 100%;
+  background: rgb(227, 224, 224);
+  border: 4px solid black;
+}
+.vcardImage {
+  height: 100%;
+  width: 100%;
+}
+.content {
+  width: 100%;
+  height: 20%;
+}
+.title {
+  font-size: 1.3vw;
+  background: black;
+  color: #e41b7b;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.5rem;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .vcard {
+    height: 30vh;
+    width: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5vh;
+    overflow: hidden;
+  }
+  .imgBox {
+    height: 80%;
+    width: 100%;
+    background: rgb(227, 224, 224);
+  }
+  .content {
+    width: 100%;
+    height: 20%;
+  }
+  .title {
+    font-size: 2vh;
+    font-weight: 300;
+    color: white;
+  }
+}
