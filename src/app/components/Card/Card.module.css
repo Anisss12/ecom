@@ -1,0 +1,111 @@
+.card {
+  height: 22vw;
+  width: 15vw;
+  border: 0.5px solid rgb(237, 237, 237);
+  overflow: hidden;
+  text-decoration: none;
+  color: gray;
+}
+
+.imgBox {
+  height: 70%;
+  width: 100%;
+  position: relative;
+}
+
+.rating {
+  position: absolute;
+  bottom: 1vw;
+  left: 1vw;
+  border-radius: 5vw;
+  background: white;
+  border: 0.3px solid gray;
+  padding: 0.2vw;
+  width: fit-content;
+  font-size: 0.7vw;
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  height: 100%;
+  width: 100%;
+}
+.details {
+  height: 22%;
+  width: 100%;
+  font-size: 1vw;
+  padding: 0.8vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.wishList {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 1.5vw;
+  color: black;
+  align-items: center;
+}
+.details h1,
+.details h2,
+.details h3 {
+  font-size: 0.9vw;
+}
+.details p {
+  font-size: 0.8vw;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 45vh;
+    width: 50%;
+    overflow: hidden;
+  }
+  .imgBox {
+    height: 77%;
+    object-position: center;
+    object-fit: contain;
+  }
+  .details {
+    padding: 0.8vh;
+    gap: 0.5vh;
+  }
+
+  .details h1 {
+    color: black;
+    font-size: 1.5vh;
+  }
+
+  .details h2 {
+    color: green;
+    font-size: 1.5vh;
+  }
+  .rating {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vh;
+    border-radius: 5vh;
+    background: white;
+    border: 0.3px solid gray;
+    padding: 0.5vh;
+    width: fit-content;
+    font-size: 1.2vh;
+    font-weight: 600;
+  }
+
+  .wishList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 2vh;
+    color: black;
+    align-items: center;
+  }
+  .details p {
+    font-size: 1.5vh;
+  }
+}

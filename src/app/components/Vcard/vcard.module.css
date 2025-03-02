@@ -1,0 +1,58 @@
+.vcard {
+  height: 20vw;
+  width: 15vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.2vw;
+  gap: 0.5vw;
+  overflow: hidden;
+  border: 0.5px solid rgb(195, 193, 193);
+}
+
+.imgBox {
+  height: 80%;
+  width: 100%;
+  background: rgb(227, 224, 224);
+}
+.vcardImage {
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5vw;
+}
+.description {
+  font-size: 1vw;
+  padding: 0.5vw;
+  font-weight: 250;
+}
+
+@media (max-width: 768px) {
+  .vcard {
+    height: 30vh;
+    width: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5vh;
+    overflow: hidden;
+  }
+  .imgBox {
+    height: 80%;
+    width: 100%;
+    background: rgb(227, 224, 224);
+  }
+  .content {
+    padding-bottom: 0.5vh;
+  }
+  .title {
+    font-size: 1.5vh;
+  }
+  .description {
+    font-size: 1vh;
+  }
+}
