@@ -1,66 +1,253 @@
-import React from "react";
-import styles from "./page.module.css";
-import HomeHead from "./components/HomeHead/HomeHead"; // Ensure correct import
-import Vcard from "./components/Vcard/Vcard"; // Ensure correct import
-import Slider from "./components/Slider/Slider";
-import Hcard from "./components/Hcard/Hcard";
-import Hslider from "./components/Hslider/Hslider";
-import Hproduct from "./components/Hproduct/Hproduct";
-import Minicard from "./components/Minicard/Minicard";
-import Nav from "./components/Nav/Nav";
-import TabBar from "./components/Tabbar/Tabbar";
+"use client";
 
-const Page = () => {
-  const kidcloth = [
-    "https://plus.unsplash.com/premium_photo-1724296696869-59cc80d104c4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1697183203294-f846144fde19?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1698305282759-0d295cbb96d6?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1638110006382-1480f3d4b98c?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1697183203524-3e7c6da4d4e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1723575737806-ecd7f74bf3a1?q=80&w=2016&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://plus.unsplash.com/premium_photo-1723575737806-ecd7f74bf3a1?q=80&w=2016&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1686823939646-69f76240e778?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1728163807630-0f30b4eb9390?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1583656345883-5189c01c024f?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1664982803698-b6b514e9928b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1578897367002-2873f26520fd?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1661776091539-f6f0874d14b3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1697183203538-08c30b0a6709?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1714889307579-3dabfd972c49?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1697183202005-0f506eb7d014?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1722859248384-8cfdcaaa9ce1?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1707816501026-e618c34026da?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1707816501030-d931ca6a5354?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1630345910963-1a697bb5262d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1580502734537-c6a7ee0bdb41?q=80&w=1921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
+import React, { useState, useEffect, useRef } from "react";
+
+const QRBarcodeScanner = () => {
+  const [activeTab, setActiveTab] = useState("scan");
+  const [scanning, setScanning] = useState(false);
+  const [barcodeDetector, setBarcodeDetector] = useState(null);
+  const [outputText, setOutputText] = useState("");
+  const [scannedItems, setScannedItems] = useState([]);
+  const [toastMessage, setToastMessage] = useState("");
+  const videoRef = useRef(null);
+  const scannerContainerRef = useRef(null);
+  const fileInputRef = useRef(null);
+
+  // Initialize Barcode Detector API
+  useEffect(() => {
+    if ("BarcodeDetector" in window) {
+      setBarcodeDetector(
+        new BarcodeDetector({ formats: ["qr_code", "code_128", "ean_13"] })
+      );
+    } else {
+      showToast(
+        "Barcode Detector API not supported. Use a library like QuaggaJS."
+      );
+    }
+  }, []);
+
+  // Function to show toast messages
+  const showToast = (message) => {
+    setToastMessage(message);
+    setTimeout(() => setToastMessage(""), 2000);
+  };
+
+  // Start Scanner
+  const requestCameraPermission = async () => {
+    try {
+      const permission = await navigator.permissions.query({ name: "camera" });
+
+      if (permission.state === "denied") {
+        showToast("Camera access is blocked. Enable it in browser settings.");
+        return;
+      }
+
+      startScanner(); // Start scanner only if permission is allowed
+    } catch (err) {
+      showToast("Failed to check permission: " + err.message);
+    }
+  };
+
+
+
+  const requestCameraPermission = async () => {
+  try {
+    const permission = await navigator.permissions.query({ name: "camera" });
+
+    if (permission.state === "denied") {
+      showToast("Camera access is blocked. Enable it in browser settings.");
+      return;
+    }
+
+    startScanner(); // Start scanner only if permission is granted
+  } catch (err) {
+    showToast("Failed to check permission: " + err.message);
+  }
+};
+
+const startScanner = async () => {
+  try {
+    let stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: "environment" },
+    });
+
+    if (videoRef.current) {
+      videoRef.current.srcObject = stream;
+      videoRef.current.onloadedmetadata = () => videoRef.current.play();
+      setScanning(true);
+      scanBarcode();
+    }
+  } catch (err) {
+    showToast("Camera access denied: " + err.message);
+  }
+};
+
+// Call requestCameraPermission() instead of startScanner()
+
+
+
+  // Call requestCameraPermission() instead of startScanner()
+
+  // Scan Barcode
+  const scanBarcode = async () => {
+    if (!scanning || !barcodeDetector || !videoRef.current) return;
+
+    let canvas = document.createElement("canvas");
+    let ctx = canvas.getContext("2d");
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+    ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+
+    try {
+      let barcodes = await barcodeDetector.detect(canvas);
+      if (barcodes.length > 0) {
+        showOutput(barcodes[0].rawValue);
+        return;
+      }
+    } catch (err) {
+      console.error("Barcode scanning error:", err);
+    }
+
+    requestAnimationFrame(scanBarcode);
+  };
+
+  // Show Output after Scanning
+  const showOutput = (result) => {
+    setScanning(false);
+    if (videoRef.current?.srcObject) {
+      videoRef.current.srcObject.getTracks().forEach((track) => track.stop());
+    }
+    setOutputText("Scanned: " + result);
+    showToast("Scan successful!");
+  };
+
+  // Manual Image Scan
+  const scanImage = (event) => {
+    let file = event.target.files[0];
+    if (!file) return;
+
+    let img = new Image();
+    img.src = URL.createObjectURL(file);
+    img.onload = async () => {
+      let canvas = document.createElement("canvas");
+      let ctx = canvas.getContext("2d");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+
+      try {
+        let barcodes = await barcodeDetector.detect(canvas);
+        if (barcodes.length > 0) {
+          showOutput(barcodes[0].rawValue);
+        } else {
+          showToast("No QR or Barcode detected.");
+        }
+      } catch (err) {
+        console.error("Image scanning error:", err);
+      }
+    };
+  };
+
+  // Copy Output to Clipboard
+  const copyOutput = () => {
+    if (!outputText) return;
+    navigator.clipboard
+      .writeText(outputText.replace("Scanned: ", ""))
+      .then(() => showToast("Copied to clipboard!"))
+      .catch((err) => showToast("Copy failed: " + err));
+  };
+
+  // Add Scanned Item to List
+  const addToList = () => {
+    let text = outputText.replace("Scanned: ", "");
+    if (!text) return;
+    setScannedItems([...scannedItems, text]);
+    showToast("Added to list!");
+  };
+
   return (
-    <div className={styles.home}>
-      <Nav></Nav>
-      <HomeHead />
-      <div className={styles.mincardSection}>
-        {kidcloth.map((link, index) => {
-          return <Minicard link={link} key={index}></Minicard>;
-        })}
-      </div>
+    <div className="wrapper">
+      <h1 className="heading">QR & Barcode Scanner</h1>
 
-      <div className={styles.vcardSection}>
-        <Slider></Slider>
-      </div>
+      {/* Scanner */}
+      {activeTab === "scan" && (
+        <div id="scannerContainer" ref={scannerContainerRef}>
+          <div className="scan-line"></div>
+          <video ref={videoRef} autoPlay playsInline></video>
+        </div>
+      )}
 
-      <div className={styles.hcardSection}>
-        <Hslider></Hslider>
-      </div>
-      <h1 className={styles.title}>TODAY'S EXCITING DEAL</h1>
+      <input
+        type="file"
+        ref={fileInputRef}
+        accept="image/*"
+        style={{ display: "none" }}
+        onChange={scanImage}
+      />
 
-      <div className={styles.hproductSection}>
-        {kidcloth.map((link, index) => {
-          return <Hproduct link={link} key={index}></Hproduct>;
-        })}
+      {outputText && (
+        <div>
+          <p>{outputText}</p>
+          <button className="btn" onClick={copyOutput}>
+            Copy Output
+          </button>
+          <button className="btn" onClick={addToList}>
+            Add to List
+          </button>
+        </div>
+      )}
+
+      {/* Scanned Items List */}
+      {scannedItems.length > 0 && (
+        <div id="scannedList">
+          <h3>Scanned Items:</h3>
+          <ul>
+            {scannedItems.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Toast Message */}
+      {toastMessage && <div id="toast">{toastMessage}</div>}
+
+      {/* Bottom Tab Bar */}
+      <div className="bottombar">
+        <label className="round" onClick={() => setActiveTab("home")}>
+          <i
+            className={`fa-solid fa-house tab ${
+              activeTab === "home" ? "active" : ""
+            }`}
+          ></i>
+          <p>Home</p>
+        </label>
+
+        <label className="round" onClick={() => fileInputRef.current.click()}>
+          <i className="fa-regular fa-image tab"></i>
+          <p>Image</p>
+        </label>
+
+        <label className="round" onClick={startScanner}>
+          <i
+            className={`fa-solid fa-qrcode tab ${
+              activeTab === "scan" ? "active" : ""
+            }`}
+          ></i>
+          <p>Scan</p>
+        </label>
+
+        <label className="round" onClick={() => setActiveTab("list")}>
+          <i
+            className={`fa-regular fa-rectangle-list tab ${
+              activeTab === "list" ? "active" : ""
+            }`}
+          ></i>
+          <p>List</p>
+        </label>
       </div>
-      <div className={styles.hcardSection}></div>
-      <TabBar></TabBar>
     </div>
   );
 };
 
-export default Page; // Make sure it's exported correctly
+export default QRBarcodeScanner;
